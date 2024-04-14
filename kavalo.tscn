@@ -1,0 +1,112 @@
+[gd_scene load_steps=17 format=3 uid="uid://dflgkfn7aviq3"]
+
+[ext_resource type="Script" path="res://kavalo.gd" id="1_4nhqv"]
+[ext_resource type="Texture2D" uid="uid://5i3cdgucddiy" path="res://assets/chars/kavalo.sprite.png" id="1_66h2e"]
+[ext_resource type="Texture2D" uid="uid://7l25oqxu8mde" path="res://assets/chars/kavalo.air.png" id="2_cavvy"]
+[ext_resource type="Texture2D" uid="uid://ye35gxhkf1md" path="res://assets/chars/kavalo.run.png" id="2_ydeuy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u32xb"]
+atlas = ExtResource("2_cavvy")
+region = Rect2(0, 64, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5mtg3"]
+atlas = ExtResource("2_cavvy")
+region = Rect2(24, 64, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvsmv"]
+atlas = ExtResource("1_66h2e")
+region = Rect2(0, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cduxo"]
+atlas = ExtResource("1_66h2e")
+region = Rect2(24, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j1kl8"]
+atlas = ExtResource("2_ydeuy")
+region = Rect2(48, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vgvgo"]
+atlas = ExtResource("2_ydeuy")
+region = Rect2(0, 32, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mwfrn"]
+atlas = ExtResource("2_ydeuy")
+region = Rect2(24, 32, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3wlao"]
+atlas = ExtResource("2_ydeuy")
+region = Rect2(48, 32, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ng0cs"]
+atlas = ExtResource("2_ydeuy")
+region = Rect2(0, 64, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vg5y"]
+atlas = ExtResource("2_ydeuy")
+region = Rect2(24, 64, 24, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_odaq5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u32xb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5mtg3")
+}],
+"loop": true,
+"name": &"air",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kvsmv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cduxo")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j1kl8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vgvgo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mwfrn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3wlao")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ng0cs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5vg5y")
+}],
+"loop": true,
+"name": &"run",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v3oh8"]
+size = Vector2(12, 24)
+
+[node name="Kavalo" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_4nhqv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -12)
+sprite_frames = SubResource("SpriteFrames_odaq5")
+animation = &"air"
+autoplay = "idle"
+frame_progress = 0.977974
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -12)
+shape = SubResource("RectangleShape2D_v3oh8")
