@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c8p1pj7dpqlu"]
 
-[ext_resource type="Script" path="res://yt_live_chat.gd" id="1_shm0r"]
+[ext_resource type="Script" path="res://scripts/yt_live_chat.gd" id="1_shm0r"]
 
 [node name="YTLiveChat" type="Node"]
 script = ExtResource("1_shm0r")

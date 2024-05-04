@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://dflgkfn7aviq3"]
 
-[ext_resource type="Script" path="res://kavalo.gd" id="1_4nhqv"]
+[ext_resource type="Script" path="res://scripts/kavalo.gd" id="1_4nhqv"]
 [ext_resource type="Texture2D" uid="uid://5i3cdgucddiy" path="res://assets/chars/kavalo.sprite.png" id="1_66h2e"]
 [ext_resource type="Texture2D" uid="uid://7l25oqxu8mde" path="res://assets/chars/kavalo.air.png" id="2_cavvy"]
 [ext_resource type="Texture2D" uid="uid://ye35gxhkf1md" path="res://assets/chars/kavalo.run.png" id="2_ydeuy"]

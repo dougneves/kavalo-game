@@ -31,3 +31,18 @@ func _physics_process(delta):
 		animated_sprite_2d.play("air")
 
 	move_and_slide()
+
+
+func _on_yt_live_chat_yt_live_message_read(text: String, authorId, timestamp):
+	print(text)
+	if text.begins_with("!pular"):
+		velocity.y = JUMP_VELOCITY
+		
+	if text.begins_with("!esquerda"):
+		Input.action_release("ui_right")
+		Input.action_press("ui_left")
+		
+	if text.begins_with("!direita"):
+		Input.action_release("ui_left")
+		Input.action_press("ui_right")
+		
